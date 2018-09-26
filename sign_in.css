@@ -1,0 +1,163 @@
+@keyframes spin {
+  from {transform: rotate(0deg);/*filter:hue-rotate(0deg);*/}
+  
+  to {transform: rotate(360deg);/*filter:hue-rotate(0deg);*/}
+}
+
+html , body {
+  margin:0px;
+}
+
+#loader_background {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#f1f1f1;
+  z-index:3;
+  }
+
+#loader {
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:60px;
+  height:60px;
+  border:10px solid #E0E0E0;
+  margin:-30px 0 0 -30px;
+  border-radius:50%;
+  border-top-color:#4A4DFF;
+  animation:spin 1s linear infinite;
+  }
+
+.nav {
+  display:block;
+  background-image:linear-gradient(130deg,#0094FF,#5542ff);
+  height:60px;
+  text-align:center;
+}
+
+.logo {
+  margin-left:-65px;
+  text-align:center;
+  height:90%;
+  }
+
+.back {
+  height:32px;
+}
+
+#back-container {
+  margin:5px;
+  width:32px;
+  height:32px;
+  display:inline-block;
+  float:left;
+  padding:9px;
+  background:rgba(255,255,255,0);
+  border-radius:50%;
+  transition:0.2s;
+}
+
+#back-container:hover {
+  background:rgba(255,255,255,0.3); 
+}
+
+  * {
+  text-align:center;
+  font-family:Noto Sans;
+}
+
+input {
+  width:340px;
+  margin:10px;
+  font-size:100%;
+  text-align:left;
+  padding:5px 10px;
+  border:1px solid black;
+  outline:none;
+}
+
+button {
+  width:340px;
+  margin:10px;
+  font-size:100%;
+  font-weight:600;
+  color:white;
+  padding:5px 10px;
+  border:1px solid #4A4DFF;
+  background:#4A4DFF;
+  transition:0.5s;
+}
+
+#error {
+  display: none;
+  width:330px;
+  background:#F14C34;
+  color:white;
+  font-size:100%;
+  margin:20px auto;
+  padding:5px 5px;
+  overflow:visible;
+}
+
+#error p {
+    display:block;
+    margin:0px;
+  }
+
+#success {
+  width:340px;
+  background:#2ecc71;
+  color:white;
+  font-size:100%;
+  margin:10px auto;
+  padding:5px 10px;
+  margin:10px;
+  border-radius:2px;
+  display:none;
+}
+
+input:focus {
+  border-color:black;
+}
+
+button:hover {
+  color:#4A4DFF;
+  background:#FFFFFF;
+}
+
+a {
+  color:#4A4DFF;
+}
+
+#image-container {
+  border:2px solid black;
+  border-radius:50%;
+  width:80px;
+  height:80px;
+  margin:20px auto 5px auto;
+}
+
+
+#image {
+  width:80px;
+  height:80px;
+  background:url(Assets/Camera.png);
+  background-position: center;
+  background-size: 50%;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:0.2s;
+}
+
+#image:hover {
+  opacity:1;
+}
+
+#checkbox {
+  display:inline-block;
+  width:12.8px;
+}

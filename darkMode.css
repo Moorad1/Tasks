@@ -1,0 +1,75 @@
+html,body {
+  background-color:#202020;
+}
+
+.Task {
+  background-color:#343434;
+  transition:0.2s;
+}
+
+.title,.description {
+  color:white;
+}
+
+.Task:hover {
+  background-color:#282828;
+}
+
+.finished {
+  background-color:#232323;
+}
+
+.finished :not(span) {
+    text-decoration:line-through;
+}
+
+.deletebtn {
+color:white;
+transition:0.2s;
+border:1.5px solid #EEEEEE;
+}
+
+.deleteBtn:hover {
+  color:#e51c34;
+  border:1.5px solid #e51c34;
+}
+
+#settingsMenu {
+  background:#202020;
+}
+
+#settingsMenu * {
+    color:white;
+}
+
+.option {
+  border: 1px solid #343434;
+}
+
+.option:hover {
+  background:#343434;
+}
+
+.theme {
+  border:1px solid white;
+}
+
+
+.back-arrow {
+  filter:invert(100%);
+}
+
+.right-arrow {
+  filter:invert(100%);
+  }
+
+.hexInput {
+  background:#232323;
+  border:1px solid white;
+  color:white;
+  }
+
+#hexBtn {
+  background:white;
+  color:black;
+}

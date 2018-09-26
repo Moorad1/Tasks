@@ -1,0 +1,50 @@
+html,body {
+  margin:0px;
+  font-family:Noto Sans;
+  }
+
+.nav {
+  display:block;
+  background-image:linear-gradient(130deg,#0094FF,#5542ff);
+  height:60px;
+  text-align:center;
+}
+
+.logo {
+  margin-left:-65px;
+  text-align:center;
+  height:90%;
+  }
+
+  h1, p {
+    margin:20px 5%;
+  }
+
+  .back {
+    height:32px;
+  }
+  
+  #back-container {
+    margin:5px;
+    width:32px;
+    height:32px;
+    display:inline-block;
+    float:left;
+    padding:9px;
+    background:rgba(255,255,255,0);
+    border-radius:50%;
+    transition:0.2s;
+  }
+  
+  #back-container:hover {
+    background:rgba(255,255,255,0.3); 
+  }
+
+  iframe {
+    border:1px solid black;
+  }
+
+  a {
+    text-decoration: none;
+    color:#4A4DFF;
+  }

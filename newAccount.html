@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Tasks: Create Account</title>
+  <link rel="stylesheet" href="sign_in.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBrQQsTYwhK6P3i-cwTzMAy1__m6A6hIhw",
+    authDomain: "todo-project-10411.firebaseapp.com",
+    databaseURL: "https://todo-project-10411.firebaseio.com",
+    projectId: "todo-project-10411",
+    storageBucket: "todo-project-10411.appspot.com",
+    messagingSenderId: "172924348119"
+  };
+    firebase.initializeApp(config);
+</script>
+</head>
+<body>
+  <div class="nav"><a href="welcome.html"> <div id="back-container"><img class="back" src="Assets/ArrowLeft.png"></div></a><img class="logo" src="Assets/logo.png"></div>
+  <div style="width:400px;margin:0 auto;">
+  <h1>Create a New Account</h1>
+  <p>Create an account to start using Tasks, Fill ALL fields:</p>
+  <div id="error"><p>...</p></div>
+  <input type="text" placeholder="Username" autocomplete="off">
+  <br/>
+  <input type="email" placeholder="Email Address" id="email_input" autocomplete="off">
+  <br/>
+  <input type="password" placeholder="Password" id="password_input" autocomplete="off">
+  <br/>
+  <input type="checkbox" id="checkbox">
+  <label style="width:50px;margin:auto;">I have read and agree to the <a href="TermsOfConditions.html">Terms of Condition</a> and the <a>Privacy Policy</a></label>
+  <br>
+  <button onclick="checkFields();">Create an Account</button>
+  </div>
+  <script src="createAccount.js"></script>
+</body>
+</html>

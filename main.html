@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Tasks</title>
+    <link rel="stylesheet" href="main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="lightMode.css">
+    <link rel="icon" href="Assets/favicon.ico">
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBrQQsTYwhK6P3i-cwTzMAy1__m6A6hIhw",
+      authDomain: "todo-project-10411.firebaseapp.com",
+      databaseURL: "https://todo-project-10411.firebaseio.com",
+      projectId: "todo-project-10411",
+      storageBucket: "todo-project-10411.appspot.com",
+      messagingSenderId: "172924348119"
+    };
+    firebase.initializeApp(config);
+  </script>
+  </head>
+  <body>
+    <div id="loader_background"><div id="loader"></div></div>
+    <div id="nav">
+      <div id="logo">
+        <img src="Assets/logo.png" width="50px">
+      </div><div id="logo-text"><h2>Tasks</h2></div><div id="plus"><img src="Assets/plus.png" width="40px" onclick="add()"></div><div id="settings"><img src="Assets/settings.png" width="40px" onclick="settings()"></div>
+    </div>
+    <div id="settingsMenu">
+      <div id="settings-move-container">
+      <div id="options-container">
+        <h1 style="margin:10px;font-size:160%;">Settings</h1>
+        <div class="option" onclick="switchPage(0)" style="border-top-width:1px;">
+          <p style="display:inline-block;margin:0px;">Account</p>
+          <img src="Assets/arrow.png" style="float:right;" width="21px" class="right-arrow"></div>
+        <div class="option" onclick="switchPage(1)">
+          <p style="display:inline-block;margin:0px;">Customise</p>
+          <img src="Assets/arrow.png" style="float:right;" width="21px" class="right-arrow"></div>
+        <div class="option" onclick="switchPage(2)">
+          <p style="display:inline-block;margin:0px;">Support</p>
+          <img src="Assets/arrow.png" style="float:right;" width="21px" class="right-arrow"></div>
+        <a href="https://www.patreon.com/MooradAltamimi" target="_blank"><div class="option">
+          <p style="display:inline-block;margin:0px;">Donate</p>
+        </div></a>
+        <div class="option" onclick="logOut()">
+          <p style="display:inline-block;margin:0px;">Sign Out</p>
+        </div>
+        <div style="height:350px;"></div>
+        </div>
+        <div style="background:#DDDDDD;padding:5px 0px;overflow:auto;display:none;" id="account-container">
+          <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+          <div id="accountImage"></div>
+          <p id="Name">Welcome Test</p>
+          <p id="Email">test@testmail.com</p>
+          <div class="option" style="border-top-width:1px;text-align:center;">Change Password</div>
+        </div>
+      <div id="customise-container" style="display:none;">
+        <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+        <p class="settingsText">Theme</p>
+        <div class="theme select" onclick="changeColour(this)" title="Twilight" style="background-image:linear-gradient(130deg,#0094FF,#5542ff);margin-left:20px;"></div>
+        <div class="theme" onclick="changeColour(this)" title="Fiery" style="background-image:linear-gradient(130deg,#FF8A05,#FFC805);"></div>
+        <div class="theme" onclick="changeColour(this)" title=" Green Pop" style="background-image:linear-gradient(130deg,#05ffa7,#29ff98);"></div>
+        <div class="theme" onclick="changeColour(this)" title="Cherry" style="background-image:linear-gradient(130deg,#EB3349,#F45C43);"></div>
+        <div class="theme" onclick="changeColour(this)" title="Silver" style="background-image:linear-gradient(130deg,#E9E9E9,#DDDDDD)"></div>
+        <div class="theme" onclick="changeColour(this)" title="Gradient Black" style="background-image:linear-gradient(130deg,#121212,#232323);"></div>
+        <p class="settingsText">Custom Gradient <a href="gradients.html" class="link" target="_blank">Learn more</a></p>
+        <input class="hexInput" placeholder="Hex Colour 1" style="margin-left:20px;"><input class="hexInput" placeholder="Hex Colour 2"><input id="hexBtn" type="button" value="Set" onclick="customColour()">
+        <p class="settingsText">Text Colour</p>
+        <div class="theme" onclick="changeText(true)" style="background-color:black;margin-left:20px;"></div>
+        <div class="theme" onclick="changeText(false)" style="background-color:white;"></div>
+        <p class="settingsText">Dark Mode</p>
+        <div class="theme" onclick="switchDarkMode(true)" style="background-color:black;margin-left:20px;"></div>
+        <div class="theme" onclick="switchDarkMode(false)" style="background-color:white;"></div>
+      </div>
+      <div id="support-container" style="display:none;">
+        <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+        <a href="contact.html" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">Contact Me</div></a>
+        <a href="faq.html" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">FAQ</div></a>
+        <a href="/" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">Terms of Conditions</div></a>
+      </div>
+    </div>
+    </div>
+    <div id="spacing"></div>
+    <div id="new_element_container">
+      <div id="new_element">
+        <h2 style="text-align:center;font-family:Noto Sans;">Add a Task</h2>
+        <br/>
+        <input type="text" placeholder="What do you want to do?" id="title_input">
+        <br/>
+        <textarea placeholder="Describe how can you check the box off, Any information needed like URLs." id="description_input"></textarea>
+        <br/>
+        <input type="button" value="Add" onclick="add_element()" id="add_button">
+      </div>
+    </div>
+    <ul id="TasksContainer">
+    </ul>
+    <script src="script.js"></script>
+  </body>
+</html>
