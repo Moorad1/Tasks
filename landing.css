@@ -169,7 +169,7 @@ p {
 
 .main-2, .phone{
     height:80%;
-    margin:80px auto 0px auto;
+    margin:20px auto 40px auto;
     text-align:center;
 }
 
@@ -180,8 +180,14 @@ p {
 }
 
 .phone img{
-    border:10px solid #AAAAAA;
-    border-radius:50px;
+    border:10px solid #DFDFDF;
+    border-bottom:50px solid #DFDFDF;
+    border-radius:25px;
+}
+
+
+.phone {
+    margin:0px auto 100px auto;
 }
 
 a {
