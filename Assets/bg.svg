@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 1169.951 740.054"
+   version="1.1"
+   id="svg19"
+   sodipodi:docname="bg.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata23">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview21"
+     showgrid="false"
+     inkscape:zoom="0.5"
+     inkscape:cx="905.77507"
+     inkscape:cy="170.71289"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Group_1" />
+  <defs
+     id="defs14">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient
+       id="linear-gradient"
+       x1="1.024"
+       y1="0.111"
+       x2="0.05"
+       y2="0.889"
+       gradientUnits="objectBoundingBox">
+      <stop
+         offset="0"
+         stop-color="#8bbdff"
+         id="stop4" />
+      <stop
+         offset="1"
+         stop-color="#5dbeff"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="linear-gradient-2"
+       x1="1674.6278"
+       y1="685.13706"
+       x2="702.95051"
+       y2="1244.0214"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.3772193,0,0,0.72610079,-312.55638,35.515906)">
+      <stop
+         offset="0"
+         stop-color="#7363ff"
+         id="stop9" />
+      <stop
+         offset="1"
+         stop-color="#0094ff"
+         id="stop11" />
+    </linearGradient>
+  </defs>
+  <g
+     id="Group_1"
+     data-name="Group 1"
+     transform="translate(-585.359 -230.2)">
+    <path
+       id="Path_2"
+       data-name="Path 2"
+       class="cls-1"
+       d="M940.617,938.787s65.5-407.346,477.69-404.907S2007.83,240.2,2007.83,240.2V980.254H940.617Z"
+       transform="translate(-252.521 -10)" />
+    <path
+       id="Path_1"
+       data-name="Path 1"
+       class="cls-2"
+       d="m 585.37462,970.2539 c 0,0 3.333,-348.908 594.85698,-303.322 591.524,45.586 574.862,-313.405 574.862,-313.405 v 616.727 z"
+       style="fill:url(#linear-gradient-2)"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
