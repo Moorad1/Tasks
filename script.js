@@ -18,11 +18,9 @@ var localdata = {
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 		currentuser = firebase.auth().currentUser;
-		console.log(currentuser.uid)
 		ref = firebase.database().ref().child("users").child(currentuser.uid);
 		ref.once('value').then(function(data) {
   	fullData = data.val();
-		console.log(fullData)
 		if (fullData != null && fullData.tasks != null) {
 			localdata.tasks = fullData.tasks
 			for (var i = 0;i < fullData.tasks.length;i++) {
@@ -30,7 +28,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 			}
 			changeTheme(fullData.theme[0],fullData.theme[1],fullData.theme[2])
 			fullList = document.getElementsByTagName("li");
-			console.log(fullList)
 			for (var i = 0;i < localdata.tasks.length;i++) {
 				if (localdata.tasks[i][2] == true) {
 					fullList[i].className = "Task finished"
@@ -97,7 +94,6 @@ function create_element(taskTitle,taskDescription) {
 	list_container.insertBefore(text_container,list_container.childNodes[0]);
 	fullList = document.getElementsByTagName("li");
 	if (dataloaded) {
-		console.log(localdata.tasks)
 		localdata.tasks.push([taskTitle,taskDescription,false])
 		pushData()
 	}
@@ -106,13 +102,12 @@ function create_element(taskTitle,taskDescription) {
 	description_input.value = '';
 }
 
+
 function remove(element) {
+	if (confirm("Are you sure you want to delete this Todo?")) {
 	elementContainer = element.parentNode
-	console.log(elementContainer)
-	console.log(elementContainer+" is going to be removed")
 	for (var e = 0;e < fullList.length;e++) {
 		if (elementContainer.childNodes[1].innerText == fullList[e].childNodes[1].innerText) {
-			console.log("The index of this element is ["+e+"] which will be removed")
 			index = e
 			break;
 		}
@@ -122,11 +117,11 @@ function remove(element) {
 	localdata.tasks.splice((fullList.length-index),1)
 	pushData()
 }
+}
 
 function findElementIndex(element) {
 	for (var e = 0;e < fullList.length;e++) {
 		if (element.childNodes[1].innerText == fullList[e].childNodes[1].innerText) {
-			console.log("The index of this element is ["+e+"]")
 			if (!localdata.tasks[e][2]) {
 			localdata.tasks[e][2] = true;
 			document.getElementsByTagName("li")[e].className = "Task finished"
@@ -159,12 +154,12 @@ function settings() {
 
 function changeColour(element) {
 	var colour = element.style.backgroundImage
-	console.log(colour)
 	localdata.theme[0] = colour
 	pushTheme()
 	document.getElementById("nav").style.backgroundImage = colour
 	document.getElementById("accountImage").style.borderImage = colour
 	document.getElementById("settingsMenu").style.borderImage = colour
+	document.getElementById("new_element").style.borderImage = colour
 	for (var e = 0;e < document.getElementsByClassName("select").length;e++ ) {document.getElementsByClassName("select")[e].className = "theme"}
 	element.className = "theme select"
 }
@@ -173,9 +168,12 @@ function changeTheme(colour,textBlack,darkMode) {
 	document.getElementById("nav").style.backgroundImage = colour
 	document.getElementById("accountImage").style.borderImage = colour
 	document.getElementById("settingsMenu").style.borderImage = colour
+	document.getElementById("new_element").style.borderImage = colour
 	for (var e = 0;e < document.getElementsByClassName("select").length;e++ ) {document.getElementsByClassName("select")[e].className = "theme"}
 	changeText(textBlack)
 	switchDarkMode(darkMode)
+	localdata.theme[0] = colour;
+	pushTheme()	
 }
 
 function changeText(darkText) {
@@ -209,6 +207,7 @@ function customColour() {
 		document.getElementById("nav").style.backgroundImage = gradient
 		document.getElementById("accountImage").style.borderImage = gradient
 		document.getElementById("settingsMenu").style.borderImage = gradient
+		document.getElementById("new_element").style.borderImage = gradient
 		for (var e = 0;e < document.getElementsByClassName("select").length;e++ ) {document.getElementsByClassName("select")[e].className = "theme"}
 		localdata.theme[0] = gradient
 		pushTheme()
@@ -232,3 +231,13 @@ function optionPage() {
 function logOut() {
 	firebase.auth().signOut()
 }
+
+function changePassword() {
+	firebase.auth().sendPasswordResetEmail(currentuser.email).then(function() {
+		window.alert("Email was sent")
+	  }).catch(function(error) {
+		window.alert("Error happend while sending the rest password request")
+	  });
+	  
+}
+

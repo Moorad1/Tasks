@@ -1,7 +1,7 @@
 @keyframes spin {
-  from {transform: rotate(0deg);/*filter:hue-rotate(0deg);*/}
+  from {transform: rotate(0deg);}
   
-  to {transform: rotate(360deg);/*filter:hue-rotate(0deg);*/}
+  to {transform: rotate(360deg);}
 }
 
 html , body {
@@ -98,15 +98,10 @@ button {
   background:#F14C34;
   color:white;
   font-size:100%;
-  margin:20px auto;
-  padding:5px 5px;
-  overflow:visible;
+  margin:0px auto;
+  padding:10px 5px;
+  overflow:initial;
 }
-
-#error p {
-    display:block;
-    margin:0px;
-  }
 
 #success {
   width:340px;

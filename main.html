@@ -7,8 +7,8 @@
     <link rel="icon" href="Assets/favicon.ico">
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <script>
-    // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBrQQsTYwhK6P3i-cwTzMAy1__m6A6hIhw",
       authDomain: "todo-project-10411.firebaseapp.com",
@@ -26,8 +26,8 @@
       <div id="logo">
         <img src="Assets/logo.png" width="50px">
       </div><div id="logo-text"><h2>Tasks</h2></div><div id="plus"><img src="Assets/plus.png" width="40px" onclick="add()"></div><div id="settings"><img src="Assets/settings.png" width="40px" onclick="settings()"></div>
-    </div>
-    <div id="settingsMenu">
+    </div> 
+      <div id="settingsMenu">
       <div id="settings-move-container">
       <div id="options-container">
         <h1 style="margin:10px;font-size:160%;">Settings</h1>
@@ -49,14 +49,14 @@
         <div style="height:350px;"></div>
         </div>
         <div style="background:#DDDDDD;padding:5px 0px;overflow:auto;display:none;" id="account-container">
-          <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+          <div class="arrow"><img src="Assets/arrowleft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
           <div id="accountImage"></div>
           <p id="Name">Welcome Test</p>
           <p id="Email">test@testmail.com</p>
-          <div class="option" style="border-top-width:1px;text-align:center;">Change Password</div>
+          <div class="option" style="border-top-width:1px;text-align:center;" onclick="changePassword();">Change Password</div>
         </div>
       <div id="customise-container" style="display:none;">
-        <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+        <div class="arrow"><img src="Assets/arrowleft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
         <p class="settingsText">Theme</p>
         <div class="theme select" onclick="changeColour(this)" title="Twilight" style="background-image:linear-gradient(130deg,#0094FF,#5542ff);margin-left:20px;"></div>
         <div class="theme" onclick="changeColour(this)" title="Fiery" style="background-image:linear-gradient(130deg,#FF8A05,#FFC805);"></div>
@@ -74,10 +74,10 @@
         <div class="theme" onclick="switchDarkMode(false)" style="background-color:white;"></div>
       </div>
       <div id="support-container" style="display:none;">
-        <div class="arrow"><img src="Assets/arrowLeft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
+        <div class="arrow"><img src="Assets/arrowleft.png" height="20px" class="back-arrow" onclick="optionPage()"></div>
         <a href="contact.html" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">Contact Me</div></a>
         <a href="faq.html" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">FAQ</div></a>
-        <a href="/" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">Terms of Conditions</div></a>
+        <a href="termsandconditions.html" target="_blank"><div class="option" style="border-top-width:1px;text-align:center;">Terms and Conditions</div></a>
       </div>
     </div>
     </div>

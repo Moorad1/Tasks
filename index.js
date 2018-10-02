@@ -13,24 +13,37 @@ email_input.addEventListener("keyup", function(evnt) {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     window.location.href = "main.html"
-    } else {
-    console.log("logged out")
     }
   });
 
+function checkFields() {
+  Fields = document.getElementsByTagName("input")
+  if (Fields[0].value.length > 1 && Fields[1].value.length > 1) {
+    document.getElementById("loader_background").style.display = "initial"
+    login();
+  } else {
+    document.getElementById("error").innerHTML = "You have missed a field, All field needs to be filled"
+    document.getElementById("error").style.display = "block"
+  }
+}
+
+
 function login() {
-document.getElementById("loader_background").style.display = "initial"
-document.getElementById("loader").style.display = "initial"
-
-  var email = email_input.value;
+var email = email_input.value;
 var password = password_input.value;
-
+document.getElementById("loader_background").style.display = "initial"
 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  console.log(error.message)
-  document.getElementById("error").childNodes[0].innerText = error.message
+  document.getElementById("error").innerHTML = error.message
   document.getElementById("error").style.display = "block"
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  window.location.href = "main.html"
+  } else {
+    document.getElementById("loader_background").style.display = "none"
+  }
 });
 }

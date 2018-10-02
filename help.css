@@ -16,8 +16,8 @@ html,body {
   height:90%;
   }
 
-  h1, p {
-    margin:20px 5%;
+  h1, p, h2 {
+    margin:20px 15%;
   }
 
   .back {

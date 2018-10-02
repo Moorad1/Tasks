@@ -28,8 +28,3 @@ color:black;
 transition:0.2s;
 border:1.5px solid #121212;
 }
-
-.deleteBtn:hover {
-  color:#e51c34;
-  border:1.5px solid #e51c34;
-}

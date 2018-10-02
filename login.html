@@ -5,9 +5,9 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Assets/favicon.ico">
 
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBrQQsTYwhK6P3i-cwTzMAy1__m6A6hIhw",
     authDomain: "todo-project-10411.firebaseapp.com",
@@ -21,16 +21,15 @@
 </head>
 <body>
   <div id="loader_background" style="display:none;"><div id="loader"></div></div>
-  <div class="nav"><a href="index.html"> <div id="back-container"><img class="back" src="Assets/ArrowLeft.png"></div></a><img class="logo" src="Assets/logo.png"></div>
+  <div class="nav"><a href="index.html"> <div id="back-container"><img class="back" src="Assets/arrowleft.png"></div></a><img class="logo" src="Assets/logo.png"></div>
   <h1>Sign in</h1>
   <p>Sign in with your email and password to log in into your account</p>
-  <div id="success">You have logged in successfully</div>
-  <div id="error"><p>...</p></div>
+  <div id="error">...</div>
   <input type="email" id="email_field" placeholder="Email Address">
   <br/>
   <input type="password" id="password_field" placeholder="Password">
   <br/>
-  <button id="sign_in" onclick="login()">Sign in</button>
+  <button id="sign_in" onclick="checkFields()">Sign in</button>
   <br>
    <a href="newAccount.html"><button id="sign_in">Create a new account.</button></a>
   <script src="index.js"></script>
